@@ -1,0 +1,195 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: ecoenergiaAPI
+meta:
+  id: wrk_2dbe7d95f937466791a9a9b628c5af5e
+  created: 1792557017660
+  modified: 1792557056825
+  description: ""
+collection:
+  - name: Consumos
+    meta:
+      id: fld_15ba16743af340128932b843045e8181
+      created: 1792558424419
+      modified: 1792558424419
+      sortKey: -1792558424419
+      description: ""
+    children:
+      - url: "{{ base_url }}/consumos"
+        name: Listar Consumos
+        meta:
+          id: req_f9b845fc7ac64239b977f70a83e47a5f
+          created: 1792557031097
+          modified: 1792558430490
+          isPrivate: false
+          description: ""
+          sortKey: -1792558429233
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ base_url }}/consumos/1"
+        name: Buscar Consumos
+        meta:
+          id: req_aaa2bf04924b4627bf110579e2134edf
+          created: 1792557719759
+          modified: 1792558509232
+          isPrivate: false
+          description: ""
+          sortKey: -1792558429226.75
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ base_url }}/consumos"
+        name: Registrar Consumo
+        meta:
+          id: req_c4cc43ae0ca04e5597ce21c45ed8adc3
+          created: 1792557742489
+          modified: 1792558497078
+          isPrivate: false
+          description: ""
+          sortKey: -1792558429333
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "cdDispositivo": 1,
+              "dataMedicao": "2026-10-20",
+              "kwhConsumido": 150.5
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ base_url }}/consumos/1"
+        name: Atualizar Consumo
+        meta:
+          id: req_9481219e5fe04c4fb17d02d35310636a
+          created: 1792557844896
+          modified: 1792558433922
+          isPrivate: false
+          description: ""
+          sortKey: -1792558429208
+        method: PUT
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ base_url }}/consumos/1"
+        name: Excluir Consumo
+        meta:
+          id: req_7360492905cc4d93872772f237241f10
+          created: 1792558044397
+          modified: 1792558512722
+          isPrivate: false
+          description: ""
+          sortKey: -1792558429108
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Alertas
+    meta:
+      id: fld_816812a817f34590a5ec11ca7153d520
+      created: 1792558448399
+      modified: 1792558448399
+      sortKey: -1792558448399
+      description: ""
+    children:
+      - url: "{{ base_url }}/alertas"
+        name: Listar Alertas
+        meta:
+          id: req_d5a86b6e0ad24219b45b8a7af8a979a4
+          created: 1792558192615
+          modified: 1792558632600
+          isPrivate: false
+          description: ""
+          sortKey: -1792558451732
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ base_url }}/alertas/1"
+        name: Buscar Alertas
+        meta:
+          id: req_4f3797cdceb544a6a1169653c5368b13
+          created: 1792558562473
+          modified: 1792558870977
+          isPrivate: false
+          description: ""
+          sortKey: -1792558451632
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ base_url }}/alertas/1/resolver"
+        name: Atualizar Alertas
+        meta:
+          id: req_4a988fce61cd432a898747a094f0eb28
+          created: 1792558615392
+          modified: 1792559012504
+          isPrivate: false
+          description: ""
+          sortKey: -1792558451532
+        method: PATCH
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_68f2cb3924d7bb84e2f7dda04bee232b9ce9f445
+    created: 1792557017665
+    modified: 1792557017665
+environments:
+  name: Base Environment
+  meta:
+    id: env_68f2cb3924d7bb84e2f7dda04bee232b9ce9f445
+    created: 1792557017663
+    modified: 1792558267102
+    isPrivate: false
+  data:
+    base_url: http://localhost:8080
