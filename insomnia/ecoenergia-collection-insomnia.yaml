@@ -39,8 +39,8 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: "{{ base_url }}/consumos/1"
-        name: Buscar Consumos
+      - url: "{{ base_url }}/consumos/1001"
+        name: Buscar Consumo
         meta:
           id: req_63d4fc9e8ad04fa49c2038b3de925077
           created: 1792557719759
@@ -77,7 +77,7 @@ collection:
           mimeType: application/json
           text: |-
             {
-              "cdDispositivo": 1,
+              "cdDispositivo": 101,
               "dataMedicao": "2026-10-20",
               "kwhConsumido": 150.5
             }
@@ -98,7 +98,7 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: "{{ base_url }}/consumos/1"
+      - url: "{{ base_url }}/consumos/1001"
         name: Atualizar Consumo
         meta:
           id: req_4c23e53f746e44afafca51a651104860
@@ -108,6 +108,17 @@ collection:
           description: ""
           sortKey: -1792558429208
         method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "cdDispositivo": 101,
+              "dataMedicao": "2026-10-01",
+              "kwhConsumido": 80.0
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
         authentication:
           type: basic
           useISO88591: false
@@ -122,7 +133,7 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: "{{ base_url }}/consumos/1"
+      - url: "{{ base_url }}/consumos/10000"
         name: Excluir Consumo
         meta:
           id: req_1063a5ab4ee04fb08e84eef4684a4298
@@ -179,7 +190,7 @@ collection:
             store: true
           rebuildPath: true
       - url: "{{ base_url }}/alertas/1"
-        name: Buscar Alertas
+        name: Buscar Alerta
         meta:
           id: req_90a2106033924236921b2498d76f8d23
           created: 1792558562473
@@ -203,7 +214,7 @@ collection:
             store: true
           rebuildPath: true
       - url: "{{ base_url }}/alertas/1/resolver"
-        name: Atualizar Alertas
+        name: Resolver Alerta
         meta:
           id: req_e3cd5283dc7b46e5988c5954ea70a4b0
           created: 1792558615392
@@ -234,7 +245,7 @@ collection:
       sortKey: -1793163945904
       description: ""
     children:
-      - url: http://localhost:8080/unidades
+      - url: "{{ base_url }}/unidades"
         name: Cadastrar Unidade
         meta:
           id: req_70d818a026914d4bb7c2ce38974c0153
@@ -270,7 +281,7 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: http://localhost:8080/unidades
+      - url: "{{ base_url }}/unidades"
         name: Listar Unidades
         meta:
           id: req_60903959a7d64fbd9f985f335a4aa802
@@ -294,7 +305,7 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: http://localhost:8080/unidades/10000
+      - url: "{{ base_url }}/unidades/10000"
         name: Buscar Unidade
         meta:
           id: req_3fa406e90deb42dc97f8c4c80ff897f6
@@ -318,7 +329,7 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: http://localhost:8080/unidades/10000
+      - url: "{{ base_url }}/unidades/10000"
         name: Atualizar Unidade
         meta:
           id: req_05e1bfed515a47618aa834e0103416ea
@@ -354,7 +365,7 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: http://localhost:8080/unidades/10000
+      - url: "{{ base_url }}/unidades/10000"
         name: Excluir Unidade
         meta:
           id: req_83565af95e7d4af2951094af8a5f23dd
@@ -386,7 +397,7 @@ collection:
       sortKey: -1793166967872
       description: ""
     children:
-      - url: http://localhost:8080/dispositivos
+      - url: "{{ base_url }}/dispositivos"
         name: Cadastrar Dispositivo
         meta:
           id: req_ceecbc4e9f3949f5969c6c31c2045227
@@ -423,7 +434,7 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: http://localhost:8080/dispositivos
+      - url: "{{ base_url }}/dispositivos"
         name: Listar Dispositivos
         meta:
           id: req_8c16dd9a3b6048368d7d03c08b3430b6
@@ -447,7 +458,7 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: http://localhost:8080/dispositivos/999
+      - url: "{{ base_url }}/dispositivos/101"
         name: Buscar Dispositivo
         meta:
           id: req_0b048d866f8943fba25760cea4f5fa4f
@@ -471,7 +482,7 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: http://localhost:8080/unidades/999/dispositivos
+      - url: "{{ base_url }}/unidades/1/dispositivos"
         name: Listar Dispositivos da Unidade
         meta:
           id: req_fa0942e80e8b4528ac98f183c2d97969
@@ -495,7 +506,7 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: http://localhost:8080/dispositivos/10000
+      - url: "{{ base_url }}/dispositivos/10000"
         name: Atualizar Dispositivo
         meta:
           id: req_bb1eef3d1efd47c79f108b35537b5b9d
@@ -513,7 +524,7 @@ collection:
               "nmDispositivo": "Ar-condicionado Sala 1 Atualizado",
               "dsTipoDispositivo": "Climatização",
               "vlLimiteKwhHora": 3.00,
-              "stDispositivo": "X",
+              "stDispositivo": "M",
               "dtInstalacao": "2026-10-28"
             }
         headers:
@@ -541,7 +552,7 @@ collection:
       sortKey: -1793223922787
       description: ""
     children:
-      - url: http://localhost:8080/metas
+      - url: "{{ base_url }}/metas"
         name: Cadastrar Meta
         meta:
           id: req_01e8b654bfa048a381d2f47c81b0671e
@@ -556,8 +567,8 @@ collection:
           text: |-
             {
               "cdUnidade": 1,
-              "nrMes": 1,
-              "nrAno": 2020,
+              "nrMes": 12,
+              "nrAno": 2026,
               "vlMetaMaxKwh": 1000.00
             }
         headers:
@@ -577,7 +588,7 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: http://localhost:8080/unidades/1/metas
+      - url: "{{ base_url }}/unidades/1/metas"
         name: Listar Metas da Unidade
         meta:
           id: req_39d221572e53495ea491639228b6dfbc
@@ -601,7 +612,7 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: http://localhost:8080/metas/6
+      - url: "{{ base_url }}/metas/10000"
         name: Atualizar Meta
         meta:
           id: req_f08ffbf48d7240168fbedc44e3bc0355
@@ -616,7 +627,7 @@ collection:
           text: |-
             {
               "cdUnidade": 1,
-              "nrMes": 9,
+              "nrMes": 12,
               "nrAno": 2026,
               "vlMetaMaxKwh": 2000.00
             }
@@ -637,7 +648,7 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: http://localhost:8080/unidades/999/indicadores?mes=10&ano=2026
+      - url: "{{ base_url }}/unidades/1/indicadores?mes=10&ano=2026"
         name: Consultar Indicadores
         meta:
           id: req_732cb23294dd404bbc7053442afebb78
@@ -675,5 +686,5 @@ environments:
     modified: 1793236889593
     isPrivate: false
   data:
-    base_url: http://localhost:8080/
+    base_url: http://localhost:8080
     senha_api: ""
