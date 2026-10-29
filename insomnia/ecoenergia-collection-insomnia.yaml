@@ -2,14 +2,14 @@ type: collection.insomnia.rest/5.0
 schema_version: "5.1"
 name: ecoenergiaAPI
 meta:
-  id: wrk_2dbe7d95f937466791a9a9b628c5af5e
-  created: 1792557017660
-  modified: 1792557056825
+  id: wrk_737d6507afd0473ab284dbeb0150feb0
+  created: 1793146165679
+  modified: 1793146165679
   description: ""
 collection:
   - name: Consumos
     meta:
-      id: fld_15ba16743af340128932b843045e8181
+      id: fld_a8b3cc363aa94681b1889b93e6261931
       created: 1792558424419
       modified: 1792558424419
       sortKey: -1792558424419
@@ -18,13 +18,19 @@ collection:
       - url: "{{ base_url }}/consumos"
         name: Listar Consumos
         meta:
-          id: req_f9b845fc7ac64239b977f70a83e47a5f
+          id: req_a43fb3d9d7aa40b3b46f0cac752ed16b
           created: 1792557031097
-          modified: 1792558430490
+          modified: 1793237410063
           isPrivate: false
           description: ""
           sortKey: -1792558429233
         method: GET
+        authentication:
+          type: basic
+          useISO88591: false
+          username: user
+          password: "{{ senha_api }}"
+          disabled: false
         settings:
           renderRequestBody: true
           encodeUrl: true
@@ -36,13 +42,19 @@ collection:
       - url: "{{ base_url }}/consumos/1"
         name: Buscar Consumos
         meta:
-          id: req_aaa2bf04924b4627bf110579e2134edf
+          id: req_63d4fc9e8ad04fa49c2038b3de925077
           created: 1792557719759
-          modified: 1792558509232
+          modified: 1793237421039
           isPrivate: false
           description: ""
           sortKey: -1792558429226.75
         method: GET
+        authentication:
+          type: basic
+          useISO88591: false
+          username: user
+          password: "{{ senha_api }}"
+          disabled: false
         settings:
           renderRequestBody: true
           encodeUrl: true
@@ -54,9 +66,9 @@ collection:
       - url: "{{ base_url }}/consumos"
         name: Registrar Consumo
         meta:
-          id: req_c4cc43ae0ca04e5597ce21c45ed8adc3
+          id: req_f12ea4897d764b23a40a2e7304d5ae54
           created: 1792557742489
-          modified: 1792558497078
+          modified: 1793237396014
           isPrivate: false
           description: ""
           sortKey: -1792558429333
@@ -72,6 +84,12 @@ collection:
         headers:
           - name: Content-Type
             value: application/json
+        authentication:
+          type: basic
+          useISO88591: false
+          username: user
+          password: "{{ senha_api }}"
+          disabled: false
         settings:
           renderRequestBody: true
           encodeUrl: true
@@ -83,13 +101,19 @@ collection:
       - url: "{{ base_url }}/consumos/1"
         name: Atualizar Consumo
         meta:
-          id: req_9481219e5fe04c4fb17d02d35310636a
+          id: req_4c23e53f746e44afafca51a651104860
           created: 1792557844896
-          modified: 1792558433922
+          modified: 1793237434483
           isPrivate: false
           description: ""
           sortKey: -1792558429208
         method: PUT
+        authentication:
+          type: basic
+          useISO88591: false
+          username: user
+          password: "{{ senha_api }}"
+          disabled: false
         settings:
           renderRequestBody: true
           encodeUrl: true
@@ -101,13 +125,19 @@ collection:
       - url: "{{ base_url }}/consumos/1"
         name: Excluir Consumo
         meta:
-          id: req_7360492905cc4d93872772f237241f10
+          id: req_1063a5ab4ee04fb08e84eef4684a4298
           created: 1792558044397
-          modified: 1792558512722
+          modified: 1793237447920
           isPrivate: false
           description: ""
           sortKey: -1792558429108
         method: DELETE
+        authentication:
+          type: basic
+          useISO88591: false
+          username: user
+          password: "{{ senha_api }}"
+          disabled: false
         settings:
           renderRequestBody: true
           encodeUrl: true
@@ -118,7 +148,7 @@ collection:
           rebuildPath: true
   - name: Alertas
     meta:
-      id: fld_816812a817f34590a5ec11ca7153d520
+      id: fld_c2c062d8324e4830af26633e792dc56d
       created: 1792558448399
       modified: 1792558448399
       sortKey: -1792558448399
@@ -127,13 +157,19 @@ collection:
       - url: "{{ base_url }}/alertas"
         name: Listar Alertas
         meta:
-          id: req_d5a86b6e0ad24219b45b8a7af8a979a4
+          id: req_c55b5ace165248d5beb5926ae3c3a2be
           created: 1792558192615
-          modified: 1792558632600
+          modified: 1793237369850
           isPrivate: false
           description: ""
           sortKey: -1792558451732
         method: GET
+        authentication:
+          type: basic
+          useISO88591: false
+          username: user
+          password: "{{ senha_api }}"
+          disabled: false
         settings:
           renderRequestBody: true
           encodeUrl: true
@@ -145,13 +181,19 @@ collection:
       - url: "{{ base_url }}/alertas/1"
         name: Buscar Alertas
         meta:
-          id: req_4f3797cdceb544a6a1169653c5368b13
+          id: req_90a2106033924236921b2498d76f8d23
           created: 1792558562473
-          modified: 1792558870977
+          modified: 1793237379157
           isPrivate: false
           description: ""
           sortKey: -1792558451632
         method: GET
+        authentication:
+          type: basic
+          useISO88591: false
+          username: user
+          password: "{{ senha_api }}"
+          disabled: false
         settings:
           renderRequestBody: true
           encodeUrl: true
@@ -163,13 +205,454 @@ collection:
       - url: "{{ base_url }}/alertas/1/resolver"
         name: Atualizar Alertas
         meta:
-          id: req_4a988fce61cd432a898747a094f0eb28
+          id: req_e3cd5283dc7b46e5988c5954ea70a4b0
           created: 1792558615392
-          modified: 1792559012504
+          modified: 1793237386108
           isPrivate: false
           description: ""
           sortKey: -1792558451532
         method: PATCH
+        authentication:
+          type: basic
+          useISO88591: false
+          username: user
+          password: "{{ senha_api }}"
+          disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Unidades
+    meta:
+      id: fld_175cea9b604f4351af78d88f4dc20b97
+      created: 1793163945904
+      modified: 1793163945904
+      sortKey: -1793163945904
+      description: ""
+    children:
+      - url: http://localhost:8080/unidades
+        name: Cadastrar Unidade
+        meta:
+          id: req_70d818a026914d4bb7c2ce38974c0153
+          created: 1793163961400
+          modified: 1793237164556
+          isPrivate: false
+          description: ""
+          sortKey: -1793163961400
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "nmUnidade": "Matriz SP",
+              "sgEstado": "SP",
+              "nmCidade": "São Paulo",
+              "dsSegmento": "Sede"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        authentication:
+          type: basic
+          useISO88591: false
+          username: user
+          password: "{{ senha_api }}"
+          disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/unidades
+        name: Listar Unidades
+        meta:
+          id: req_60903959a7d64fbd9f985f335a4aa802
+          created: 1793164385602
+          modified: 1793237179452
+          isPrivate: false
+          description: ""
+          sortKey: -1792861206566
+        method: GET
+        authentication:
+          type: basic
+          useISO88591: false
+          username: user
+          password: "{{ senha_api }}"
+          disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/unidades/10000
+        name: Buscar Unidade
+        meta:
+          id: req_3fa406e90deb42dc97f8c4c80ff897f6
+          created: 1793164475024
+          modified: 1793237184705
+          isPrivate: false
+          description: ""
+          sortKey: -1792709829149
+        method: GET
+        authentication:
+          type: basic
+          useISO88591: false
+          username: user
+          password: "{{ senha_api }}"
+          disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/unidades/10000
+        name: Atualizar Unidade
+        meta:
+          id: req_05e1bfed515a47618aa834e0103416ea
+          created: 1793164598281
+          modified: 1793237168617
+          isPrivate: false
+          description: ""
+          sortKey: -1793012583983
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "nmUnidade": "Matriz SP Atualizada",
+              "sgEstado": "SP",
+              "nmCidade": "São Paulo",
+              "dsSegmento": "Sede"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        authentication:
+          type: basic
+          useISO88591: false
+          username: user
+          password: "{{ senha_api }}"
+          disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/unidades/10000
+        name: Excluir Unidade
+        meta:
+          id: req_83565af95e7d4af2951094af8a5f23dd
+          created: 1793164702776
+          modified: 1793237172619
+          isPrivate: false
+          description: ""
+          sortKey: -1792936895274.5
+        method: DELETE
+        authentication:
+          type: basic
+          useISO88591: false
+          username: user
+          password: "{{ senha_api }}"
+          disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Dispositivos
+    meta:
+      id: fld_999c273c24794e0eb495d6baab1f0544
+      created: 1793166967872
+      modified: 1793166967872
+      sortKey: -1793166967872
+      description: ""
+    children:
+      - url: http://localhost:8080/dispositivos
+        name: Cadastrar Dispositivo
+        meta:
+          id: req_ceecbc4e9f3949f5969c6c31c2045227
+          created: 1793166991223
+          modified: 1793237141577
+          isPrivate: false
+          description: ""
+          sortKey: -1793167002255
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "cdUnidade": 1,
+              "nmDispositivo": "Ar-condicionado Sala 1",
+              "dsTipoDispositivo": "Climatização",
+              "vlLimiteKwhHora": 2.50,
+              "dtInstalacao": "2026-10-28"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        authentication:
+          type: basic
+          useISO88591: false
+          username: user
+          password: "{{ senha_api }}"
+          disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/dispositivos
+        name: Listar Dispositivos
+        meta:
+          id: req_8c16dd9a3b6048368d7d03c08b3430b6
+          created: 1793167172148
+          modified: 1793237151076
+          isPrivate: false
+          description: ""
+          sortKey: -1793165481827.5
+        method: GET
+        authentication:
+          type: basic
+          useISO88591: false
+          username: user
+          password: "{{ senha_api }}"
+          disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/dispositivos/999
+        name: Buscar Dispositivo
+        meta:
+          id: req_0b048d866f8943fba25760cea4f5fa4f
+          created: 1793167258097
+          modified: 1793237155113
+          isPrivate: false
+          description: ""
+          sortKey: -1793164721613.75
+        method: GET
+        authentication:
+          type: basic
+          useISO88591: false
+          username: user
+          password: "{{ senha_api }}"
+          disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/unidades/999/dispositivos
+        name: Listar Dispositivos da Unidade
+        meta:
+          id: req_fa0942e80e8b4528ac98f183c2d97969
+          created: 1793167370103
+          modified: 1793237159612
+          isPrivate: false
+          description: ""
+          sortKey: -1793164341506.875
+        method: GET
+        authentication:
+          type: basic
+          useISO88591: false
+          username: user
+          password: "{{ senha_api }}"
+          disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/dispositivos/10000
+        name: Atualizar Dispositivo
+        meta:
+          id: req_bb1eef3d1efd47c79f108b35537b5b9d
+          created: 1793167545791
+          modified: 1793237146827
+          isPrivate: false
+          description: ""
+          sortKey: -1793166242041.25
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "cdUnidade": 1,
+              "nmDispositivo": "Ar-condicionado Sala 1 Atualizado",
+              "dsTipoDispositivo": "Climatização",
+              "vlLimiteKwhHora": 3.00,
+              "stDispositivo": "X",
+              "dtInstalacao": "2026-10-28"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        authentication:
+          type: basic
+          useISO88591: false
+          username: user
+          password: "{{ senha_api }}"
+          disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Metas.
+    meta:
+      id: fld_8f54e144249b41fea1e211c0a08f4370
+      created: 1793223922787
+      modified: 1793223922787
+      sortKey: -1793223922787
+      description: ""
+    children:
+      - url: http://localhost:8080/metas
+        name: Cadastrar Meta
+        meta:
+          id: req_01e8b654bfa048a381d2f47c81b0671e
+          created: 1793223931542
+          modified: 1793237118086
+          isPrivate: false
+          description: ""
+          sortKey: -1793223938797
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "cdUnidade": 1,
+              "nrMes": 1,
+              "nrAno": 2020,
+              "vlMetaMaxKwh": 1000.00
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        authentication:
+          type: basic
+          useISO88591: false
+          username: user
+          password: "{{ senha_api }}"
+          disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/unidades/1/metas
+        name: Listar Metas da Unidade
+        meta:
+          id: req_39d221572e53495ea491639228b6dfbc
+          created: 1793224085144
+          modified: 1793237133423
+          isPrivate: false
+          description: ""
+          sortKey: -1793195470526
+        method: GET
+        authentication:
+          type: basic
+          useISO88591: false
+          username: user
+          password: "{{ senha_api }}"
+          disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/metas/6
+        name: Atualizar Meta
+        meta:
+          id: req_f08ffbf48d7240168fbedc44e3bc0355
+          created: 1793224182830
+          modified: 1793237128582
+          isPrivate: false
+          description: ""
+          sortKey: -1793209704661.5
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "cdUnidade": 1,
+              "nrMes": 9,
+              "nrAno": 2026,
+              "vlMetaMaxKwh": 2000.00
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        authentication:
+          type: basic
+          useISO88591: false
+          username: user
+          password: "{{ senha_api }}"
+          disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/unidades/999/indicadores?mes=10&ano=2026
+        name: Consultar Indicadores
+        meta:
+          id: req_732cb23294dd404bbc7053442afebb78
+          created: 1793230379666
+          modified: 1793237137532
+          isPrivate: false
+          description: ""
+          sortKey: -1793181236390.5
+        method: GET
+        authentication:
+          type: basic
+          useISO88591: false
+          username: user
+          password: "{{ senha_api }}"
+          disabled: false
         settings:
           renderRequestBody: true
           encodeUrl: true
@@ -181,15 +664,16 @@ collection:
 cookieJar:
   name: Default Jar
   meta:
-    id: jar_68f2cb3924d7bb84e2f7dda04bee232b9ce9f445
+    id: jar_908f6a1752dc432b9cebc2dcda751e25
     created: 1792557017665
     modified: 1792557017665
 environments:
   name: Base Environment
   meta:
-    id: env_68f2cb3924d7bb84e2f7dda04bee232b9ce9f445
+    id: env_fef575dd43c14c5db9dce1d28e2a87b7
     created: 1792557017663
-    modified: 1792558267102
+    modified: 1793236889593
     isPrivate: false
   data:
-    base_url: http://localhost:8080
+    base_url: http://localhost:8080/
+    senha_api: ""
