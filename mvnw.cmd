@@ -40,6 +40,14 @@
 @SET __MVNW_ARG0_NAME__=
 @SET MVNW_USERNAME=
 @SET MVNW_PASSWORD=
+@IF "%JAVA_HOME%"=="" (
+  @FOR /F "tokens=2* delims= " %%A IN ('REG QUERY "HKCU\Environment" /v JAVA_HOME 2^>NUL') DO @SET "JAVA_HOME=%%B"
+)
+@IF "%JAVA_HOME%"=="" (
+  @IF EXIST "C:\Program Files\Java\jdk-25" SET "JAVA_HOME=C:\Program Files\Java\jdk-25"
+  @IF EXIST "C:\Program Files\Java\jdk-24" SET "JAVA_HOME=C:\Program Files\Java\jdk-24"
+  @IF EXIST "C:\Program Files\Eclipse Adoptium\jdk-25.0.0.36-hotspot" SET "JAVA_HOME=C:\Program Files\Eclipse Adoptium\jdk-25.0.0.36-hotspot"
+)
 @IF NOT "%__MVNW_CMD__%"=="" ("%__MVNW_CMD__%" %*)
 @echo Cannot start maven from wrapper >&2 && exit /b 1
 @GOTO :EOF
