@@ -1,17 +1,20 @@
 # EcoEnergia – Gestão de Consumo de Energia (ESG)
 
-API RESTful para monitorar o consumo de energia elétrica de unidades corporativas (sedes, fábricas, centros de distribuição), acompanhar metas mensais, detectar picos de consumo e apoiar a governança ambiental (pilar "E" do ESG).
+API RESTful para monitorar o consumo de energia elétrica de unidades corporativas (sedes, fábricas, centros de distribuição), acompanhar metas mensais, detectar picos de consumo e apoiar a governança ambiental (pilar **E** do ESG).
 
+Projeto acadêmico – FIAP, Análise e Desenvolvimento de Sistemas.
 
 ## Integrantes
-|Amanda Sayuri Santos Uechi| RM566892 |
-|Aniole Lopes Dos Santos Da Hora | RM567472 |
-|Angelo Romano Delfino Dos Santos | RM567274 |
-|Mariana Tenório Cavalcante Malvão | RM567541 |
-|Grace Camara Dos Santos | RM567589 |
+| Nome | RM |
+|---|---|
+| Amanda Sayuri Santos Uechi | RM566892 |
+| Aniole Lopes Dos Santos Da Hora | RM567472 |
+| Angelo Romano Delfino Dos Santos | RM567274 |
+| Mariana Tenório Cavalcante Malvão | RM567541 |
+| Grace Camara Dos Santos | RM567589 |
 
 ## Problema e solução
-Empresas com várias unidades têm dificuldade de saber onde a energia está sendo desperdiçada. A EcoEnergia centraliza as medições de consumo dos dispositivos, compara o acumulado do mês com a meta definida para cada unidade, gera Alertas automáticos quando um dispositivo ultrapassa seu limite e entrega indicadores (percentual da meta atingido, quantidade de alertas) para apoiar a tomada de decisão.
+Empresas com várias unidades têm dificuldade de saber **onde** a energia está sendo desperdiçada. A EcoEnergia centraliza as medições de consumo dos dispositivos, compara o acumulado do mês com a meta definida para cada unidade, gera **alertas automáticos** quando um dispositivo ultrapassa seu limite e entrega **indicadores** (percentual da meta atingido, quantidade de alertas) para apoiar a tomada de decisão.
 
 ## Tecnologias
 - Java 21 · Spring Boot 4.1.1 (Web MVC, Data JPA, Validation, Security)
@@ -21,17 +24,15 @@ Empresas com várias unidades têm dificuldade de saber onde a energia está sen
 - Docker e Docker Compose
 - Maven · Lombok
 
-## Como executar (Docker)
+## Como executar (Docker – recomendado)
 
-Pré-requisitos: Docker Desktop em execução (no Windows, com WSL 2) e as portas `8080` e `1521` livres.
+**Pré-requisitos:** Docker Desktop em execução (no Windows, com WSL 2) e as portas `8080` e `1521` livres.
 
 ```bash
-# 1. Na raiz do projeto, crie o arquivo de variáveis
-cp .env.password .env       
-
-# 2. Suba o banco e a API
 docker compose up --build
 ```
+
+O arquivo `.env` já vem configurado com usuários de teste, usados apenas pelo Oracle do contêiner.
 
 - Na primeira execução o Oracle leva de 1 a 3 minutos para ficar saudável. A API só inicia depois disso e o **Flyway** cria as tabelas, sequences, triggers e dados de teste automaticamente.
 - A API fica disponível em **http://localhost:8080**.
@@ -52,7 +53,7 @@ docker compose up --build
 | `DB_USERNAME` | Usuário da aplicação (schema onde o Flyway cria as tabelas) |
 | `DB_PASSWORD` | Senha do usuário da aplicação |
 
-O compose monta `DB_URL=jdbc:oracle:thin:@//oracle:1521/FREEPDB1` para a API. O arquivo `.env` **não deve ser versionado**; use o `.env.password` como modelo.
+O compose monta `DB_URL=jdbc:oracle:thin:@//oracle:1521/FREEPDB1` para a API.
 
 ### Como o Docker está organizado
 - **`Dockerfile`** (multi-stage): o 1º estágio compila com Maven + JDK 21; o 2º roda só com JRE 21 Alpine, com usuário sem privilégios de root.
