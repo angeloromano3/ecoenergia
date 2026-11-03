@@ -1,0 +1,44 @@
+# EcoEnergia - API Spring Boot + Oracle Free
+# Subir tudo:   docker compose up --build
+# Derrubar:     docker compose down        (mantém os dados)
+# Zerar banco:  docker compose down -v     (apaga o volume do Oracle)
+
+services:
+  oracle:
+    image: gvenzl/oracle-free:23-slim-faststart
+    container_name: ecoenergia-oracle
+    environment:
+      ORACLE_PASSWORD: ${ORACLE_PASSWORD}        # senha do SYS/SYSTEM
+      APP_USER: ${DB_USERNAME}                   # usuário da aplicação (criado no FREEPDB1)
+      APP_USER_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "1521:1521"                              # opcional: acesso por SQL Developer/DBeaver
+    volumes:
+      - oracle-data:/opt/oracle/oradata
+    healthcheck:
+      test: ["CMD", "healthcheck.sh"]            # script que acompanha a imagem gvenzl
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 60s
+    restart: unless-stopped
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ecoenergia-api
+    depends_on:
+      oracle:
+        condition: service_healthy               # API só sobe com o banco pronto
+    environment:
+      # "oracle" é o nome do serviço acima (DNS interno do compose)
+      DB_URL: jdbc:oracle:thin:@//oracle:1521/FREEPDB1
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "8080:8080"
+    restart: on-failure
+
+volumes:
+  oracle-data:

@@ -1,0 +1,15 @@
+target/
+.git/
+.gitignore
+.gitattributes
+.idea/
+.mvn/
+mvnw
+mvnw.cmd
+insomnia/
+*.iml
+.env
+.vscode/
+HELP.md
+Dockerfile
+docker-compose.yml
