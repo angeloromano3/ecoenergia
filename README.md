@@ -4,11 +4,11 @@ API RESTful para monitorar o consumo de energia elétrica de unidades corporativ
 
 
 ## Integrantes
-| Amanda Sayuri Santos Uechi | RM566892 |
-| Aniole Lopes Dos Santos Da Hora | RM567472 |
-| Angelo Romano Delfino Dos Santos | RM567274 |
-| Mariana Tenório Cavalcante Malvão | RM567541 |
-| Grace Camara Dos Santos | RM567589 |
+|Amanda Sayuri Santos Uechi| RM566892 |
+|Aniole Lopes Dos Santos Da Hora | RM567472 |
+|Angelo Romano Delfino Dos Santos | RM567274 |
+|Mariana Tenório Cavalcante Malvão | RM567541 |
+|Grace Camara Dos Santos | RM567589 |
 
 ## Problema e solução
 Empresas com várias unidades têm dificuldade de saber onde a energia está sendo desperdiçada. A EcoEnergia centraliza as medições de consumo dos dispositivos, compara o acumulado do mês com a meta definida para cada unidade, gera Alertas automáticos quando um dispositivo ultrapassa seu limite e entrega indicadores (percentual da meta atingido, quantidade de alertas) para apoiar a tomada de decisão.
